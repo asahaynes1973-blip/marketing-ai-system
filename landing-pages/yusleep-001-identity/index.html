@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>She Used to Wake Up Ready. What Happened to Her?</title>
+
+  <!-- Facebook Pixel Code -->
+  <!-- [PIXEL_ID] -->
+  <!-- End Facebook Pixel Code -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #FAF8F5;
+      color: #1C1C1E;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    /* Eyebrow */
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9E7A8C;
+      margin-bottom: 14px;
+    }
+
+    /* Headlines */
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #1C1C1E;
+      margin-bottom: 14px;
+    }
+
+    .subheadline {
+      font-size: 18px;
+      color: #4A4A4A;
+      line-height: 1.5;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: #9E7A8C;
+      border-radius: 2px;
+      margin: 28px 0;
+    }
+
+    /* Body copy */
+    p {
+      margin-bottom: 20px;
+      color: #1C1C1E;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9E7A8C;
+      margin-bottom: 10px;
+      margin-top: 32px;
+    }
+
+    /* Quiz container */
+    #quiz-section {
+      margin-top: 36px;
+    }
+
+    .quiz-header {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 6px;
+    }
+
+    .quiz-subtext {
+      font-size: 15px;
+      color: #6B6B6B;
+      margin-bottom: 24px;
+    }
+
+    /* Progress dots */
+    .progress-dots {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #DDD;
+      transition: background 0.3s;
+    }
+
+    .dot.active { background: #9E7A8C; }
+    .dot.done { background: #C4A8BC; }
+
+    /* Question block */
+    .question-block {
+      display: none;
+    }
+
+    .question-block.active {
+      display: block;
+    }
+
+    .question-text {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #1C1C1E;
+      margin-bottom: 20px;
+    }
+
+    .step-label {
+      font-size: 13px;
+      color: #9E7A8C;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    /* Answer options */
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .answer-btn {
+      width: 100%;
+      min-height: 56px;
+      padding: 14px 18px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2D8DE;
+      border-radius: 10px;
+      text-align: left;
+      font-size: 16px;
+      color: #1C1C1E;
+      cursor: pointer;
+      line-height: 1.4;
+      transition: border-color 0.2s, background 0.2s;
+      font-family: inherit;
+    }
+
+    .answer-btn:hover, .answer-btn:focus {
+      border-color: #9E7A8C;
+      background: #F9F3F7;
+      outline: none;
+    }
+
+    .answer-btn.selected {
+      border-color: #9E7A8C;
+      background: #F4EBF1;
+    }
+
+    /* Result section */
+    #result-section {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .result-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    /* CTA Button */
+    .cta-wrap {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 18px 20px;
+      background: #9E7A8C;
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: inherit;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.3;
+      transition: background 0.2s, transform 0.1s;
+      -webkit-appearance: none;
+    }
+
+    .cta-btn:hover {
+      background: #8A6678;
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    .cta-subtext {
+      font-size: 13px;
+      color: #8A8A8E;
+      margin-top: 10px;
+    }
+
+    /* Pullquote */
+    .pullquote {
+      border-left: 3px solid #9E7A8C;
+      padding: 14px 18px;
+      margin: 28px 0;
+      background: #F6EFF3;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      font-size: 17px;
+      color: #3A2F35;
+    }
+
+    @media (min-width: 600px) {
+      h1 { font-size: 34px; }
+      .page-wrap { padding: 48px 32px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <p class="eyebrow">For Women 45+</p>
+
+  <h1>She Used to Wake Up Ready. What Happened to Her?</h1>
+
+  <p class="subheadline">If you've been feeling less like yourself — foggy, flat, or just <em>off</em> — it might not be what you think. Take 60 seconds to find out.</p>
+
+  <div class="divider"></div>
+
+  <!-- Hook Copy -->
+  <p>She was the one who got things done. Up early, clear-headed, running the day instead of being run by it. She had energy for the things that mattered. She was <em>present</em>.</p>
+
+  <p>If you're reading this, you might remember that version of yourself — and quietly wonder where she went.</p>
+
+  <p>You're not imagining the difference. And it might have less to do with stress or "just getting older" than you think.</p>
+
+  <div class="divider"></div>
+
+  <!-- Identity Loss Build -->
+  <p class="section-label">What's actually happening</p>
+
+  <p>The changes are subtle at first. You snap at someone you love and feel bad about it afterward. You sit down to do something and forget what it was. By mid-afternoon, it takes everything you have just to keep going.</p>
+
+  <p>You don't feel <em>sick</em>. You just don't feel like <em>you</em>.</p>
+
+  <div class="pullquote">
+    "I kept telling myself I was just tired. But it was more than that — I felt like I was disappearing a little. Less sharp, less present. Like there was a dimmer switch on everything I used to care about."
+  </div>
+
+  <p>This pattern — the fogginess, the flatness, the sense of running below your usual level — is something a lot of women in their 40s and 50s describe. And for most of them, it's deeply connected to something that happens at night: the <em>quality</em> of their rest.</p>
+
+  <p>Not just the hours. The <em>kind</em> of sleep that actually restores you.</p>
+
+  <p>After 45, the body's ability to reach deep, restorative sleep begins to shift. When that happens, no amount of "good habits" fully compensates — and the effects show up not just as tiredness, but as <em>you</em>. Your clarity. Your patience. Your sense of being present in your own life.</p>
+
+  <p>You haven't lost yourself. Something may have been quietly stealing your rest — and with it, your energy to be who you are.</p>
+
+  <div class="divider"></div>
+
+  <!-- Quiz -->
+  <div id="quiz-section">
+    <p class="quiz-header">Three quick questions</p>
+    <p class="quiz-subtext">Help us understand what you're experiencing — takes about 60 seconds.</p>
+
+    <div class="progress-dots">
+      <div class="dot active" id="dot-1"></div>
+      <div class="dot" id="dot-2"></div>
+      <div class="dot" id="dot-3"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block active" id="q1">
+      <p class="step-label">Question 1 of 3</p>
+      <p class="question-text">Think about how you felt first thing in the morning five years ago versus now. How would you describe the difference?</p>
+      <div class="answers">
+        <button class="answer-btn" onclick="nextQ(1)">About the same — I still feel like me</button>
+        <button class="answer-btn" onclick="nextQ(1)">A little flatter, but mostly okay</button>
+        <button class="answer-btn" onclick="nextQ(1)">Noticeably different — I'm tired where I used to have energy</button>
+        <button class="answer-btn" onclick="nextQ(1)">Like a completely different person some mornings</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" id="q2">
+      <p class="step-label">Question 2 of 3</p>
+      <p class="question-text">When did you last wake up feeling genuinely clear-headed and ready for the day?</p>
+      <div class="answers">
+        <button class="answer-btn" onclick="nextQ(2)">This week</button>
+        <button class="answer-btn" onclick="nextQ(2)">Within the last month</button>
+        <button class="answer-btn" onclick="nextQ(2)">I honestly can't remember</button>
+        <button class="answer-btn" onclick="nextQ(2)">I'm not sure that ever happens anymore</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" id="q3">
+      <p class="step-label">Question 3 of 3</p>
+      <p class="question-text">Which of these feels most true for you lately?</p>
+      <div class="answers">
+        <button class="answer-btn" onclick="showResult()">I have the energy I need</button>
+        <button class="answer-btn" onclick="showResult()">I get through the day but I'm running on fumes</button>
+        <button class="answer-btn" onclick="showResult()">I feel like I'm disappearing a little — less sharp, less present</button>
+        <button class="answer-btn" onclick="showResult()">I'm exhausted and I don't feel like myself at all</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div id="result-section">
+    <p class="result-heading">Here's what your answers suggest</p>
+
+    <p>What you're describing — that sense of being <em>off</em>, of running below your usual level — is something a lot of women in their 40s and 50s name as the hardest part. Not just the tiredness. The feeling that <em>you</em> have gotten smaller.</p>
+
+    <p>Here's something worth knowing: for many women, this pattern is deeply connected to how well the body is getting truly restorative sleep. Not just hours of sleep — but the <em>quality</em> of rest that actually restores you.</p>
+
+    <p>There's a short video that explains the connection clearly — and what some women are now doing to support the kind of sleep that may help them feel more like themselves again. It's about 8 minutes. A lot of women say they felt hopeful for the first time in a while after watching it.</p>
+
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://hop.clickbank.net/?affiliate=hmgonline&vendor=yusleep&op=vsl&tid=tracking" id="cta-btn">
+        I Want to Feel Like Myself Again →
+      </a>
+      <p class="cta-subtext">Free video — about 8 minutes</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Facebook Pixel events
+  function fireFBEvent(name, params) {
+    if (typeof fbq === 'function') {
+      fbq('track', name, params || {});
+    }
+  }
+
+  var quizStarted = false;
+
+  function nextQ(currentNum) {
+    if (!quizStarted) {
+      quizStarted = true;
+      fireFBEvent('ViewContent', { content_name: 'quiz_start_identity' });
+    }
+
+    var current = document.getElementById('q' + currentNum);
+    var next = document.getElementById('q' + (currentNum + 1));
+
+    // Update dots
+    var currentDot = document.getElementById('dot-' + currentNum);
+    currentDot.classList.remove('active');
+    currentDot.classList.add('done');
+
+    var nextDot = document.getElementById('dot-' + (currentNum + 1));
+    if (nextDot) {
+      nextDot.classList.add('active');
+    }
+
+    current.classList.remove('active');
+    if (next) {
+      next.classList.add('active');
+    }
+
+    window.scrollTo({ top: document.getElementById('quiz-section').offsetTop - 20, behavior: 'smooth' });
+  }
+
+  function showResult() {
+    fireFBEvent('ViewContent', { content_name: 'quiz_complete_identity' });
+
+    document.getElementById('q3').classList.remove('active');
+    document.getElementById('dot-3').classList.remove('active');
+    document.getElementById('dot-3').classList.add('done');
+    document.getElementById('quiz-section').style.display = 'none';
+
+    var result = document.getElementById('result-section');
+    result.style.display = 'block';
+
+    setTimeout(function() {
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  // CTA click fires Lead event
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('cta-btn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        fireFBEvent('Lead', { content_name: 'cta_click_identity' });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
