@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Long Have You Been Telling Yourself You'll Fix Your Sleep "When Things Calm Down"?</title>
+
+  <!-- Facebook Pixel Code -->
+  <!-- [PIXEL_ID] -->
+  <!-- End Facebook Pixel Code -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #FAF8F5;
+      color: #1C1C1E;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #C49A3C;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #1C1C1E;
+      margin-bottom: 14px;
+    }
+
+    .subheadline {
+      font-size: 18px;
+      color: #4A4A4A;
+      line-height: 1.5;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: #C49A3C;
+      border-radius: 2px;
+      margin: 28px 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: #1C1C1E;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #C49A3C;
+      margin-bottom: 10px;
+      margin-top: 32px;
+    }
+
+    .insight-box {
+      background: #FDF6E3;
+      border: 1px solid #E8D49A;
+      border-left: 4px solid #C49A3C;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 18px;
+      margin: 24px 0;
+      font-size: 16px;
+      color: #2A2010;
+      line-height: 1.6;
+    }
+
+    .insight-box strong {
+      color: #8A6C20;
+    }
+
+    /* Quiz */
+    #quiz-section {
+      margin-top: 36px;
+    }
+
+    .quiz-header {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 6px;
+    }
+
+    .quiz-subtext {
+      font-size: 15px;
+      color: #6B6B6B;
+      margin-bottom: 24px;
+    }
+
+    .progress-dots {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #DDD;
+      transition: background 0.3s;
+    }
+
+    .dot.active { background: #C49A3C; }
+    .dot.done { background: #DDB95A; }
+
+    .question-block { display: none; }
+    .question-block.active { display: block; }
+
+    .step-label {
+      font-size: 13px;
+      color: #C49A3C;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .question-text {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #1C1C1E;
+      margin-bottom: 20px;
+    }
+
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .answer-btn {
+      width: 100%;
+      min-height: 56px;
+      padding: 14px 18px;
+      background: #FFFFFF;
+      border: 1.5px solid #E8D49A;
+      border-radius: 10px;
+      text-align: left;
+      font-size: 16px;
+      color: #1C1C1E;
+      cursor: pointer;
+      line-height: 1.4;
+      transition: border-color 0.2s, background 0.2s;
+      font-family: inherit;
+    }
+
+    .answer-btn:hover, .answer-btn:focus {
+      border-color: #C49A3C;
+      background: #FDF6E3;
+      outline: none;
+    }
+
+    /* Result */
+    #result-section {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .result-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    /* CTA */
+    .cta-wrap {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 18px 20px;
+      background: #C49A3C;
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: inherit;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.3;
+      transition: background 0.2s, transform 0.1s;
+      -webkit-appearance: none;
+    }
+
+    .cta-btn:hover {
+      background: #A8842E;
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active { transform: translateY(0); }
+
+    .cta-subtext {
+      font-size: 13px;
+      color: #8A8A8E;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 600px) {
+      h1 { font-size: 32px; }
+      .page-wrap { padding: 48px 32px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <p class="eyebrow">Something Worth Knowing</p>
+
+  <h1>How Long Have You Been Telling Yourself You'll Fix Your Sleep "When Things Calm Down"?</h1>
+
+  <p class="subheadline">If the answer is months — or years — there's something important you should know about what that pattern may be doing over time.</p>
+
+  <div class="divider"></div>
+
+  <!-- Hook / Observational Opener -->
+  <p>Most women don't notice the moment their sleep gets bad. It happens gradually — a few rough nights here, waking up a little earlier than you'd like there — until one day you realize you genuinely can't remember the last time you felt truly rested.</p>
+
+  <p>And then life keeps moving, and there are a hundred things more urgent than your sleep, and you just... keep going.</p>
+
+  <p>But sleep researchers have been paying attention to what happens when that pattern runs for months or years. What they're finding is worth knowing — especially for women over 45.</p>
+
+  <div class="divider"></div>
+
+  <!-- Stakes Build -->
+  <p class="section-label">Why this matters more than you've been told</p>
+
+  <p>Sleep isn't just about feeling rested. Quality sleep is when the body does its most important recovery work — processing the day, supporting mood, clearing mental clutter, and maintaining the kind of energy that lets you show up fully for the things that matter to you.</p>
+
+  <p>When that recovery is consistently incomplete — night after night, month after month — it takes a toll on energy, mood, and clarity in ways that are easy to attribute to "just getting older" or "being stressed."</p>
+
+  <div class="insight-box">
+    <strong>What researchers have noticed:</strong> The body's ability to achieve deep, restorative sleep doesn't remain constant over time — especially for women after 45. When the natural systems that support sleep quality begin to change, the effects show up gradually. And the longer the pattern runs, the harder it may be for the body to reset on its own.
+  </div>
+
+  <p>Most women in this situation are also the last people to prioritize themselves. They take care of everyone and everything else — and their own rest is always the thing that gets pushed to later.</p>
+
+  <p>This assessment is for those women. It takes about a minute.</p>
+
+  <!-- Quiz -->
+  <div id="quiz-section">
+    <p class="quiz-header">How long has this been going on?</p>
+    <p class="quiz-subtext">Three questions — be honest with yourself.</p>
+
+    <div class="progress-dots">
+      <div class="dot active" id="dot-1"></div>
+      <div class="dot" id="dot-2"></div>
+      <div class="dot" id="dot-3"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block active" id="q1">
+      <p class="step-label">Question 1 of 3</p>
+      <p class="question-text">How long have you been dealing with sleep that doesn't feel fully restoring?</p>
+      <div class="answers">
+        <button class="answer-btn" onclick="nextQ(1)">Less than a month</button>
+        <button class="answer-btn" onclick="nextQ(1)">A few months</button>
+        <button class="answer-btn" onclick="nextQ(1)">Over a year</button>
+        <button class="answer-btn" onclick="nextQ(1)">I honestly can't remember sleeping really well</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" id="q2">
+      <p class="step-label">Question 2 of 3</p>
+      <p class="question-text">Have you noticed your sleep getting harder as you've gotten older — more waking up, lighter sleep, harder to fall back asleep?</p>
+      <div class="answers">
+        <button class="answer-btn" onclick="nextQ(2)">Not really</button>
+        <button class="answer-btn" onclick="nextQ(2)">A little, yes</button>
+        <button class="answer-btn" onclick="nextQ(2)">Definitely — it's been getting worse</button>
+        <button class="answer-btn" onclick="nextQ(2)">Yes, and it's significantly affecting how I feel</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" id="q3">
+      <p class="step-label">Question 3 of 3</p>
+      <p class="question-text">How often do you prioritize your own rest and recovery — not just sleep hours, but actual, intentional self-care around sleep?</p>
+      <div class="answers">
+        <button class="answer-btn" onclick="showResult()">Regularly — it's a priority</button>
+        <button class="answer-btn" onclick="showResult()">Sometimes, when I remember</button>
+        <button class="answer-btn" onclick="showResult()">Rarely — other things always come first</button>
+        <button class="answer-btn" onclick="showResult()">Almost never — I put everyone else first</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div id="result-section">
+    <p class="result-heading">Based on what you shared</p>
+
+    <p>You've likely been running a sleep deficit for longer than you've realized — and if you're like most women in this situation, you've probably been <em>last on your own list</em> when it comes to doing something about it.</p>
+
+    <p>Here's what's worth understanding: the body's ability to achieve deep, restorative sleep doesn't just bounce back on its own after a long stretch of poor rest. It may need specific support — especially after 45, when the natural systems that regulate sleep quality begin to change.</p>
+
+    <p>There's a short video that explains what that support may look like — and why the women who say it helped most are the ones who stopped putting it off. It's about 8 minutes. The best time to watch it might be right now.</p>
+
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://hop.clickbank.net/?affiliate=hmgonline&vendor=yusleep&op=vsl&tid=tracking" id="cta-btn">
+        Watch Now — Don't Put This Off Again
+      </a>
+      <p class="cta-subtext">Free video — about 8 minutes</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function fireFBEvent(name, params) {
+    if (typeof fbq === 'function') {
+      fbq('track', name, params || {});
+    }
+  }
+
+  var quizStarted = false;
+
+  function nextQ(currentNum) {
+    if (!quizStarted) {
+      quizStarted = true;
+      fireFBEvent('ViewContent', { content_name: 'quiz_start_fear_urgency' });
+    }
+
+    var current = document.getElementById('q' + currentNum);
+    var next = document.getElementById('q' + (currentNum + 1));
+
+    var currentDot = document.getElementById('dot-' + currentNum);
+    currentDot.classList.remove('active');
+    currentDot.classList.add('done');
+
+    var nextDot = document.getElementById('dot-' + (currentNum + 1));
+    if (nextDot) nextDot.classList.add('active');
+
+    current.classList.remove('active');
+    if (next) next.classList.add('active');
+
+    window.scrollTo({ top: document.getElementById('quiz-section').offsetTop - 20, behavior: 'smooth' });
+  }
+
+  function showResult() {
+    fireFBEvent('ViewContent', { content_name: 'quiz_complete_fear_urgency' });
+
+    document.getElementById('q3').classList.remove('active');
+    document.getElementById('dot-3').classList.remove('active');
+    document.getElementById('dot-3').classList.add('done');
+    document.getElementById('quiz-section').style.display = 'none';
+
+    var result = document.getElementById('result-section');
+    result.style.display = 'block';
+
+    setTimeout(function() {
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('cta-btn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        fireFBEvent('Lead', { content_name: 'cta_click_fear_urgency' });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
