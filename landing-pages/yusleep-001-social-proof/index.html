@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Researchers Are Calling This "The Missing Piece" for Women Over 45</title>
+
+  <!-- Facebook Pixel Code -->
+  <!-- [PIXEL_ID] -->
+  <!-- End Facebook Pixel Code -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #FAF8F5;
+      color: #1C1C1E;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7A9EB5;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #1C1C1E;
+      margin-bottom: 14px;
+    }
+
+    .subheadline {
+      font-size: 18px;
+      color: #4A4A4A;
+      line-height: 1.5;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: #7A9EB5;
+      border-radius: 2px;
+      margin: 28px 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: #1C1C1E;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7A9EB5;
+      margin-bottom: 10px;
+      margin-top: 32px;
+    }
+
+    /* Authority pullout */
+    .authority-block {
+      background: #EEF4F8;
+      border: 1px solid #C2D8E5;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 24px 0;
+    }
+
+    .authority-block .quote-text {
+      font-style: italic;
+      font-size: 17px;
+      color: #1C2B35;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .authority-block .quote-attr {
+      font-size: 13px;
+      color: #5A7A8A;
+      font-weight: 600;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      border-left: 3px solid #7A9EB5;
+      padding: 14px 18px;
+      margin: 24px 0;
+      background: #F2F7FA;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .testimonial .t-text {
+      font-style: italic;
+      font-size: 16px;
+      color: #1C2B35;
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+
+    .testimonial .t-attr {
+      font-size: 13px;
+      color: #5A7A8A;
+      font-weight: 600;
+    }
+
+    /* Quiz */
+    #quiz-section {
+      margin-top: 36px;
+    }
+
+    .quiz-header {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 6px;
+    }
+
+    .quiz-subtext {
+      font-size: 15px;
+      color: #6B6B6B;
+      margin-bottom: 24px;
+    }
+
+    .progress-dots {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #DDD;
+      transition: background 0.3s;
+    }
+
+    .dot.active { background: #7A9EB5; }
+    .dot.done { background: #A8C4D4; }
+
+    .question-block { display: none; }
+    .question-block.active { display: block; }
+
+    .step-label {
+      font-size: 13px;
+      color: #7A9EB5;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .question-text {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #1C1C1E;
+      margin-bottom: 20px;
+    }
+
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .answer-btn {
+      width: 100%;
+      min-height: 56px;
+      padding: 14px 18px;
+      background: #FFFFFF;
+      border: 1.5px solid #C2D8E5;
+      border-radius: 10px;
+      text-align: left;
+      font-size: 16px;
+      color: #1C1C1E;
+      cursor: pointer;
+      line-height: 1.4;
+      transition: border-color 0.2s, background 0.2s;
+      font-family: inherit;
+    }
+
+    .answer-btn:hover, .answer-btn:focus {
+      border-color: #7A9EB5;
+      background: #EFF6FA;
+      outline: none;
+    }
+
+    /* Result */
+    #result-section {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .result-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1C1C1E;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    /* CTA */
+    .cta-wrap {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 18px 20px;
+      background: #7A9EB5;
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: inherit;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.3;
+      transition: background 0.2s, transform 0.1s;
+      -webkit-appearance: none;
+    }
+
+    .cta-btn:hover {
+      background: #638AA3;
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active { transform: translateY(0); }
+
+    .cta-subtext {
+      font-size: 13px;
+      color: #8A8A8E;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 600px) {
+      h1 { font-size: 32px; }
+      .page-wrap { padding: 48px 32px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <p class="eyebrow">Natural Sleep Research</p>
+
+  <h1>Sleep Researchers Are Calling This "The Missing Piece" for Women Over 45</h1>
+
+  <p class="subheadline">Thousands of women have already tried this — here's what they're saying (and why it took so long to get the word out).</p>
+
+  <div class="divider"></div>
+
+  <!-- Hook / Credibility Lead -->
+  <p>For years, the standard advice for poor sleep was the same: no screens before bed, cut caffeine, try meditation. Sound familiar? For millions of women over 45, that advice simply doesn't cover what's actually happening.</p>
+
+  <p>A growing body of research focused specifically on women's sleep patterns after midlife is pointing to something different — a natural support approach that many women say finally made a meaningful difference.</p>
+
+  <div class="authority-block">
+    <p class="quote-text">"What we're seeing in women's sleep research isn't just about habits — it's about what happens to the body's natural sleep-signaling systems over time. That's a different conversation entirely."</p>
+    <p class="quote-attr">— Natural Sleep Science Research Community</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Authority Build -->
+  <p class="section-label">What the research points to</p>
+
+  <p>The field of circadian biology and natural sleep support has grown substantially over the past decade — and a specific subset of that research focuses on women after midlife. What researchers in this area are finding doesn't always make the front page, but it's been quietly changing how many women approach their sleep.</p>
+
+  <p>The common thread: standard sleep hygiene advice was largely developed without accounting for the specific changes that happen in women's bodies after 45. It's not wrong — it's just incomplete for a significant portion of the population.</p>
+
+  <div class="testimonial">
+    <p class="t-text">"I finally stopped waking up at 3am feeling like my mind was racing. It took trying something I'd never heard of before — I only wish someone had told me sooner."</p>
+    <p class="t-attr">— Community member, age 54</p>
+  </div>
+
+  <div class="testimonial">
+    <p class="t-text">"I'd tried melatonin, magnesium, every sleep tip out there. Nothing really clicked until I understood what was actually different about my sleep after 50. Once I got that, everything changed."</p>
+    <p class="t-attr">— Community member, age 51</p>
+  </div>
+
+  <p>Many women in natural health communities say they wished someone had told them about this sooner. The information exists — it's just not always easy to find in plain language.</p>
+
+  <div class="divider"></div>
+
+  <!-- Self-Assessment Lead -->
+  <p>We put together a short self-assessment to see if the research applies to you.</p>
+
+  <!-- Quiz -->
+  <div id="quiz-section">
+    <p class="quiz-header">Quick self-assessment</p>
+    <p class="quiz-subtext">Two questions — takes under a minute.</p>
+
+    <div class="progress-dots">
+      <div class="dot active" id="dot-1"></div>
+      <div class="dot" id="dot-2"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block active" id="q1">
+      <p class="step-label">Question 1 of 2</p>
+      <p class="question-text">How often do you wake up during the night and struggle to fall back asleep?</p>
+      <div class="answers">
+        <button class="answer-btn" onclick="nextQ(1)">Rarely or never</button>
+        <button class="answer-btn" onclick="nextQ(1)">A few times a week</button>
+        <button class="answer-btn" onclick="nextQ(1)">Almost every night</button>
+        <button class="answer-btn" onclick="nextQ(1)">Every single night</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" id="q2">
+      <p class="step-label">Question 2 of 2</p>
+      <p class="question-text">When you wake up in the morning, how do you generally feel?</p>
+      <div class="answers">
+        <button class="answer-btn" onclick="showResult()">Rested and ready</button>
+        <button class="answer-btn" onclick="showResult()">Okay, takes me a while to get going</button>
+        <button class="answer-btn" onclick="showResult()">Tired — like I didn't sleep well</button>
+        <button class="answer-btn" onclick="showResult()">Exhausted before the day even starts</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div id="result-section">
+    <p class="result-heading">Based on your answers</p>
+
+    <p>You're describing something a lot of women in your age group experience — and something that natural sleep research has been specifically looking at.</p>
+
+    <p>The short video below was put together specifically for women who've tried the basics and still aren't sleeping well. It covers what may actually be going on — and what some women are now doing about it with natural support.</p>
+
+    <p>Thousands of women have watched it. Many said it was the first explanation that actually made sense.</p>
+
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://hop.clickbank.net/?affiliate=hmgonline&vendor=yusleep&op=vsl&tid=tracking" id="cta-btn">
+        See What the Research Shows →
+      </a>
+      <p class="cta-subtext">Free video — about 8 minutes</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function fireFBEvent(name, params) {
+    if (typeof fbq === 'function') {
+      fbq('track', name, params || {});
+    }
+  }
+
+  var quizStarted = false;
+
+  function nextQ(currentNum) {
+    if (!quizStarted) {
+      quizStarted = true;
+      fireFBEvent('ViewContent', { content_name: 'quiz_start_social_proof' });
+    }
+
+    var current = document.getElementById('q' + currentNum);
+    var next = document.getElementById('q' + (currentNum + 1));
+
+    var currentDot = document.getElementById('dot-' + currentNum);
+    currentDot.classList.remove('active');
+    currentDot.classList.add('done');
+
+    var nextDot = document.getElementById('dot-' + (currentNum + 1));
+    if (nextDot) nextDot.classList.add('active');
+
+    current.classList.remove('active');
+    if (next) next.classList.add('active');
+
+    window.scrollTo({ top: document.getElementById('quiz-section').offsetTop - 20, behavior: 'smooth' });
+  }
+
+  function showResult() {
+    fireFBEvent('ViewContent', { content_name: 'quiz_complete_social_proof' });
+
+    document.getElementById('q2').classList.remove('active');
+    document.getElementById('dot-2').classList.remove('active');
+    document.getElementById('dot-2').classList.add('done');
+    document.getElementById('quiz-section').style.display = 'none';
+
+    var result = document.getElementById('result-section');
+    result.style.display = 'block';
+
+    setTimeout(function() {
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('cta-btn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        fireFBEvent('Lead', { content_name: 'cta_click_social_proof' });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
