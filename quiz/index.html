@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Assessment: What's Really Keeping You Awake?</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '182003375661868');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=182003375661868&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <meta property="og:title" content="Sleep Assessment: What's Really Keeping You Awake?">
+  <meta property="og:description" content="Take this 60-second assessment to find out why you can't sleep — the answer may surprise you.">
+  <meta property="og:type" content="website">
+
+  <style>
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+    .quiz-option:hover { transform: scale(1.02); }
+    .quiz-option.selected { border-color: #0d9488; background-color: #f0fdfa; }
+    .progress-fill { transition: width 0.5s ease; }
+  </style>
+</head>
+<body class="font-sans bg-white text-slate-800 antialiased">
+
+  <!-- ABOVE THE FOLD -->
+  <section class="px-4 py-12 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-teal-600 mb-4">
+        60-Second Sleep Assessment
+      </p>
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6 text-slate-900">
+        What's <span class="text-teal-600">Really</span> Keeping You Awake?
+      </h1>
+      <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto leading-relaxed">
+        Answer 5 quick questions. We'll show you the likely root cause — and what to do about it.
+      </p>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="px-4 py-8">
+    <div class="max-w-xl mx-auto">
+
+      <!-- Progress Bar -->
+      <div class="mb-8">
+        <div class="flex justify-between text-sm text-slate-500 mb-2">
+          <span>Question <span id="current-q">1</span> of 5</span>
+          <span id="progress-pct">0%</span>
+        </div>
+        <div class="w-full bg-slate-200 rounded-full h-2">
+          <div id="progress-bar" class="progress-fill bg-teal-500 h-2 rounded-full" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="quiz-step active" data-step="1">
+        <h2 class="text-xl font-bold mb-6">How long does it typically take you to fall asleep?</h2>
+        <div class="space-y-3">
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(1)">
+            <span class="font-semibold">Less than 15 minutes</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(1)">
+            <span class="font-semibold">15–30 minutes</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(1)">
+            <span class="font-semibold">30–60 minutes</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(1)">
+            <span class="font-semibold">Over an hour</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="quiz-step" data-step="2">
+        <h2 class="text-xl font-bold mb-6">How often do you wake up during the night?</h2>
+        <div class="space-y-3">
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(2)">
+            <span class="font-semibold">Rarely — I sleep through</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(2)">
+            <span class="font-semibold">Once or twice</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(2)">
+            <span class="font-semibold">3–4 times</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(2)">
+            <span class="font-semibold">I'm up every hour or two</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz-step" data-step="3">
+        <h2 class="text-xl font-bold mb-6">What have you tried to improve your sleep?</h2>
+        <div class="space-y-3">
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(3)">
+            <span class="font-semibold">Melatonin or OTC sleep aids</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(3)">
+            <span class="font-semibold">Prescription medication</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(3)">
+            <span class="font-semibold">Sleep hygiene changes (no screens, etc.)</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(3)">
+            <span class="font-semibold">Nothing has worked</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="quiz-step" data-step="4">
+        <h2 class="text-xl font-bold mb-6">How does poor sleep affect your daily life?</h2>
+        <div class="space-y-3">
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(4)">
+            <span class="font-semibold">Brain fog and difficulty concentrating</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(4)">
+            <span class="font-semibold">Low energy and fatigue all day</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(4)">
+            <span class="font-semibold">Mood swings and irritability</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(4)">
+            <span class="font-semibold">All of the above</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="quiz-step" data-step="5">
+        <h2 class="text-xl font-bold mb-6">What's your age range?</h2>
+        <div class="space-y-3">
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(5)">
+            <span class="font-semibold">25–34</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(5)">
+            <span class="font-semibold">35–44</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(5)">
+            <span class="font-semibold">45–54</span>
+          </button>
+          <button class="quiz-option w-full text-left p-4 border-2 border-slate-200 rounded-xl hover:border-teal-400 transition-all cursor-pointer" onclick="nextQuestion(5)">
+            <span class="font-semibold">55+</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="quiz-step" data-step="results">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-red-100 rounded-full mb-4">
+            <span class="text-4xl">⚠️</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+            Your Results: <span class="text-red-600">High Risk</span> for Depleted Sleep Compound
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed max-w-lg mx-auto">
+            Based on your answers, your sleep issues are consistent with a depleted level of a key natural compound that your body needs for deep, restorative sleep.
+          </p>
+        </div>
+
+        <div class="bg-teal-50 border border-teal-200 rounded-xl p-6 mb-8">
+          <h3 class="font-bold text-lg text-teal-800 mb-3">The Good News</h3>
+          <p class="text-slate-700">
+            This compound can be naturally replenished. A breakthrough supplement called <strong>YU SLEEP</strong> was specifically designed to restore this compound — without the grogginess or dependency of traditional sleep aids.
+          </p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-6 mb-8">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-amber-400 text-lg">★★★★★</span>
+            <span class="text-sm text-slate-500">127,000+ users</span>
+          </div>
+          <p class="text-slate-700 italic">"I took this quiz out of curiosity and I'm so glad I did. YU SLEEP changed everything for me."</p>
+          <p class="text-sm font-semibold text-slate-900 mt-2">— Karen M., 51</p>
+        </div>
+
+        <!-- CTA -->
+        <div id="cta" class="text-center">
+          <a id="cta-button" data-hoplink
+             href="https://hmgonline.cb.clickbank.net/?cbpage=yusleep"
+             class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg md:text-xl rounded-full px-12 py-5 shadow-xl hover:shadow-2xl transition-all duration-200 w-full md:w-auto">
+            See How YU SLEEP Works →
+          </a>
+          <div class="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
+            <span>🔒 Secure Checkout</span>
+            <span>•</span>
+            <span>60-Day Money Back Guarantee</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DISCLAIMER / FOOTER -->
+  <footer class="px-4 py-8 bg-slate-100 text-center">
+    <div class="max-w-2xl mx-auto text-xs text-slate-400 space-y-2">
+      <p>This assessment is for informational purposes only and does not constitute medical advice. Consult your healthcare provider for sleep-related medical concerns.</p>
+      <p>This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+      <p>Individual results may vary. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+      <p>ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales Inc.</p>
+      <p>© 2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Quiz Logic -->
+  <script>
+    function nextQuestion(currentStep) {
+      var current = document.querySelector('.quiz-step[data-step="' + currentStep + '"]');
+      var nextStep = currentStep + 1;
+      var next;
+
+      if (nextStep > 5) {
+        next = document.querySelector('.quiz-step[data-step="results"]');
+      } else {
+        next = document.querySelector('.quiz-step[data-step="' + nextStep + '"]');
+      }
+
+      current.classList.remove('active');
+      next.classList.add('active');
+
+      // Update progress
+      var progress = Math.min((currentStep / 5) * 100, 100);
+      document.getElementById('progress-bar').style.width = progress + '%';
+      document.getElementById('progress-pct').textContent = Math.round(progress) + '%';
+      document.getElementById('current-q').textContent = Math.min(nextStep, 5);
+
+      // Scroll to top of quiz
+      next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+
+  <!-- Pixel Events -->
+  <script>
+    setTimeout(function() {
+      fbq('track', 'ViewContent', {
+        content_name: document.title,
+        content_category: 'bridge_quiz'
+      });
+    }, 5000);
+
+    document.getElementById('cta-button').addEventListener('click', function() {
+      fbq('track', 'Lead', {
+        content_name: document.title,
+        content_category: 'bridge_quiz'
+      });
+    });
+  </script>
+
+  <!-- TID Injection -->
+  <script>
+  (function() {
+    var AFFILIATE_ID = 'hmgonline';
+    var VENDOR_SLUG = 'yusleep';
+    var DEFAULT_TID = 'cura_fb_quiz_v1';
+    var BASE_HOPLINK = 'https://' + AFFILIATE_ID + '.cb.clickbank.net/?cbpage=' + VENDOR_SLUG;
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var tid = urlParams.get('tid') || DEFAULT_TID;
+    tid = tid.substring(0, 24);
+    var hoplink = BASE_HOPLINK + '&tid=' + encodeURIComponent(tid);
+
+    document.querySelectorAll('[data-hoplink]').forEach(function(btn) {
+      btn.href = hoplink;
+    });
+    var mainCta = document.getElementById('cta-button');
+    if (mainCta) mainCta.href = hoplink;
+  })();
+  </script>
+
+</body>
+</html>
